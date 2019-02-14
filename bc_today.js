@@ -1,12 +1,11 @@
-
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
    Case Problem 2
 
    Today at the Union Script
-   Author: 
-   Date:   
+   Author: Mickal Austin
+   Date:  2-13-19 
    
    This script uses the getEvent() function to return the
    HTML code containin the daily events at the Bridger College
@@ -16,11 +15,14 @@
 
 
 
+
+
+
 function getEvent(day) {
-   var eventHTML;
-   switch (day) {
-      case 0: // Sunday Events
-      eventHTML = "<dl> \
+    var eventHTML;
+    switch (day) {
+        case 0: // Sunday Events
+            eventHTML = "<dl> \
          <dt>Highlights from the Bridger Art Collection</dt> \
          <dd><p>An exhibition from over 60 items in the BC permanent collection.</p> \
              <p><strong>Location:</strong> Room A414</p> \
@@ -34,9 +36,9 @@ function getEvent(day) {
              <p><strong>Cost:</strong> $3.75 MWU students, Union members, Union staff. $4.25 all others</p> \
          </dd> \
       </dl>";
-      break;
-      case 1: // Monday Events
-      eventHTML = "<dl> \
+            break;
+        case 1: // Monday Events
+            eventHTML = "<dl> \
          <dt>Monday Billiards</dt> \
          <dd><p>Play in the BC Billiards league for fun and prizes</p> \
              <p><strong>Location:</strong> Union Game Room </p> \
@@ -50,9 +52,9 @@ function getEvent(day) {
              <p><strong>Cost:</strong> free, seating is limited</p> \
          </dd> \
       </dl>";
-      break;
-      case 2: // Tuesday Events
-      eventHTML = "<dl> \
+            break;
+        case 2: // Tuesday Events
+            eventHTML = "<dl> \
          <dt>Alternative Breaks Spring Break Information Session</dt> \
          <dd><p>Make your spring break matter! Alt Breaks offers students inexpensive trips \
                (all under $500) around the US to participate on service projects in places such \
@@ -70,9 +72,9 @@ function getEvent(day) {
              <p><strong>Cost:</strong> free</p> \
          </dd> \
       </dl>";
-      break;      
-         case 3: // Wednesday Events
-      eventHTML = "<dl> \
+            break;
+        case 3: // Wednesday Events
+            eventHTML = "<dl> \
          <dt>Volunteer Fair</dt> \
          <dd><p>Over 20 community organizations and schools will be on hand to promote their \
                volunteer opportunities with youth programs, enviromental issues, child care, \
@@ -95,9 +97,9 @@ function getEvent(day) {
              <p><strong>Cost:</strong> free</p> \
          </dd> \
       </dl>";
-      break;
-      case 4: // Thursday Events
-      eventHTML = "<dl> \
+            break;
+        case 4: // Thursday Events
+            eventHTML = "<dl> \
          <dt>Thursday Nite Open Mike</dt> \
          <dd><p>New later hours with more acts and karaoke added to the mix! \
                 Students performing for students. Get your 15 minutes of \
@@ -120,9 +122,9 @@ function getEvent(day) {
              <p><strong>Cost:</strong> free to students; $30 for guests (15 week session)</p> \
          </dd> \
       </dl>";
-      break;         
-         case 5: // Friday Events
-      eventHTML = "<dl> \
+            break;
+        case 5: // Friday Events
+            eventHTML = "<dl> \
          <dt>Conversation &amp; Coffee Hour</dt> \
          <dd><p>Meet people from around the world in a relaxing atmosphere. \
                 Enjoy coffee, snacks, and informal conversation with  \
@@ -145,9 +147,9 @@ function getEvent(day) {
              <p><strong>Cost:</strong> $5.50</p> \
          </dd> \
       </dl>";
-      break;
-      case 6: // Saturday Events
-      eventHTML = "<dl> \
+            break;
+        case 6: // Saturday Events
+            eventHTML = "<dl> \
          <dt>Kites on the Concourse</dt> \
          <dd><p>Enjoy beautiful kites from around the world and then make and \
                 fly kites of your own invention.</p>\
@@ -169,8 +171,20 @@ function getEvent(day) {
              <p><strong>Cost:</strong> $5.75 with student ID</p> \
          </dd> \
       </dl>";
-      break;      
-   }
-   
-   return eventHTML
+            break;
+    }
+
+    return eventHTML
 }
+//decalares the current date
+var thisDate = new Date('October 14, 2018');
+// declares the variable dateString is equal to thisDate
+var dateString = thisDate;
+//variable dateHTML is = to the h2 dateString 
+var dateHTML = "<h2>" + dateString + "</h2>";
+//variable thisDay is equal to thisDate which gives you the function getDay
+var thisDay = thisDate.getDay();
+//makes the variable eventHTML equal to variable thisDate function getDay
+var eventHTML = getEvent(thisDay);
+//used function getElementById to target unionToday. Inseet function targets beforeend and html things
+document.getElementById('unionToday').insertAdjacentHTML('beforeend', dateHTML + eventHTML);
